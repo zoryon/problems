@@ -28,12 +28,12 @@ public:
             // If s[right] is already in the set, we have a duplicate
             // Remove characters from the left until the duplicate is gone
             while (chars.count(s[right])) {
-                chars.erase(s[left]); // remove the leftmost character
-                left++; // move the start of the window forward
+                chars.erase(s[left]); // Remove the leftmost character
+                left++; // Move the start of the window forward
             }
             // Insert the current character into the set
             chars.insert(s[right]);
-            
+
             // Update maxLength if the current window is longer
             maxLength = max(maxLength, right - left + 1);
         }
